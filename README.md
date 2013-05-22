@@ -25,6 +25,7 @@ Pause all [Connect](http://github.com/senchalabs/connect) requests:
     ).listen(8080);
 
 Pause all [Express](https://github.com/visionmedia/express) requests:
+
  	var express = require('express'),
         pause = require('connect-pause');
 
@@ -36,6 +37,7 @@ Pause all [Express](https://github.com/visionmedia/express) requests:
 	app.listen(3000);
 
 Pause a single [Express](https://github.com/visionmedia/express) endpoint:
+
  	var express = require('express'),
         pause = require('connect-pause');
 
@@ -46,6 +48,7 @@ Pause a single [Express](https://github.com/visionmedia/express) endpoint:
 	app.listen(3000);
 
 Pass an error to be returned after the delay:
+
  	var express = require('express'),
         pause = require('connect-pause');
 
