@@ -28,7 +28,7 @@ Pause all [Express](https://github.com/visionmedia/express) requests:
  	var express = require('express'),
         pause = require('connect-pause');
 
-    var app = express.createServer();
+    var app = express();
     app.use(pause(1000));
 	app.get('/', function(req, res){
 		res.send('Waited 1 second');
@@ -39,8 +39,18 @@ Pause a single [Express](https://github.com/visionmedia/express) endpoint:
  	var express = require('express'),
         pause = require('connect-pause');
 
-    var app = express.createServer();
+    var app = express();
 	app.get('/', pause(1000), function(req, res){
+		res.send('Waited 1 second');
+	});
+	app.listen(3000);
+
+Pass an error to be returned after the delay:
+ 	var express = require('express'),
+        pause = require('connect-pause');
+
+    var app = express();
+	app.get('/', pause(1000, new Error('Send 500')), function(req, res){
 		res.send('Waited 1 second');
 	});
 	app.listen(3000);

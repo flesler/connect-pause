@@ -15,6 +15,5 @@
   , "main": "./index.js"
   , "engines": { "node": "*" }
   , "dependencies": {}
-  , "devDependencies": { "connect": "*" }
 }
 

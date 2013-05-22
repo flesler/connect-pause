@@ -4,10 +4,10 @@
  * MIT Licensed
  */
 
-module.exports = function(delay) {
+module.exports = function(delay, err) {
   delay = delay || 1000;
 
   return function(req, res, next){
-    setTimeout(next, delay);
+    setTimeout(next, delay, err);
   };
 };
