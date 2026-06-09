@@ -11,7 +11,11 @@
        , "latency"
     ]
   , "license": "MIT"
+  , "homepage": "https://github.com/flesler/connect-pause#readme"
   , "repository": "git://github.com/flesler/connect-pause"
+  , "bugs": {
+        "url": "https://github.com/flesler/connect-pause/issues"
+    }
   , "main": "./index.js"
   , "engines": { "node": "*" }
   , "dependencies": {}
