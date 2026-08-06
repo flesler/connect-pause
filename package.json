@@ -39,7 +39,9 @@
     "test:watch": "vitest --watch",
     "lint": "eslint --cache --cache-strategy content 'src/**/*.ts' '*.ts'",
     "lint:fix": "npm run lint -- --fix",
-    "prepublishOnly": "npm run build"
+    "lint:full": "npm run lint:fix && npm run test:types && npm run build && npm run test:unit",
+    "prepublishOnly": "npm run build",
+    "prepare": "[ \"$CI\" != \"true\" ] && [ -d node_modules/husky ] && husky || true"
   },
   "engines": {
     "node": ">=14"
@@ -51,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "^8.24.1",
     "@typescript-eslint/parser": "^8.24.1",
     "eslint": "^9.21.0",
+    "husky": "^9.1.7",
     "tsup": "^8.4.0",
     "typescript": "^5.8.2",
     "vitest": "^3.0.7"
