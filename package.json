@@ -1,23 +1,58 @@
 {
-    "name": "connect-pause"
-  , "author": "Ariel Flesler <aflesler@gmail.com>"
-  , "version": "0.1.0"
-  , "description": "Connect/Express middleware to simulate latency for debugging"
-  , "keywords": [
-         "connect"
-       , "express"
-       , "pause"
-       , "delay"
-       , "latency"
-    ]
-  , "license": "MIT"
-  , "homepage": "https://github.com/flesler/connect-pause#readme"
-  , "repository": "git://github.com/flesler/connect-pause"
-  , "bugs": {
-        "url": "https://github.com/flesler/connect-pause/issues"
+  "name": "connect-pause",
+  "version": "1.0.0",
+  "description": "Connect/Express middleware to simulate latency for debugging",
+  "keywords": [
+    "connect",
+    "express",
+    "pause",
+    "delay",
+    "latency"
+  ],
+  "author": {
+    "name": "Ariel Flesler",
+    "url": "https://github.com/flesler"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/flesler/connect-pause#readme",
+  "bugs": "https://github.com/flesler/connect-pause/issues",
+  "repository": "git://github.com/flesler/connect-pause",
+  "type": "module",
+  "main": "./dist/connect-pause.cjs",
+  "module": "./dist/connect-pause.js",
+  "types": "./dist/connect-pause.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/connect-pause.d.ts",
+      "import": "./dist/connect-pause.js",
+      "require": "./dist/connect-pause.cjs"
     }
-  , "main": "./index.js"
-  , "engines": { "node": "*" }
-  , "dependencies": {}
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "npm run test:types && npm run test:unit",
+    "test:types": "tsc -p tsconfig.test.json --noEmit",
+    "test:unit": "vitest run",
+    "test:watch": "vitest --watch",
+    "lint": "eslint --cache --cache-strategy content 'src/**/*.ts' '*.ts'",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@stylistic/eslint-plugin": "^4.0.1",
+    "@types/node": "^26.1.2",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^9.21.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
+  }
 }
-
